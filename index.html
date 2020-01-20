@@ -46,7 +46,7 @@
 
             <h2>$14.99</h2>
 
-            <p>$17.99 <span>25% OFF</span></p>
+            <p><span>$17.99 </span>25% OFF</p>
         </div>
 
         <h4>ONLINE EXCLUSIVE</h4>
@@ -81,14 +81,11 @@
         <div class="form1">
             <h5>Size Guide</h5>
 
-            <form>
-                <label for="custom"> Your Custom Fit</label><br>
-                <input type="text" value="0" maxlength="3" size="4">
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Checkout Now</button>
+            <label for="custom"> Your Custom Fit</label><br>
+            <h6>Electric Red</h6>
 
-            </form>
+            <input type="text" class="count" name="qty" value="0" style=" color: black; margin: 0 20px;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="  background-color: black; ">Checkout Now</button>
 
         </div>
 
@@ -106,15 +103,13 @@
             </ul>
         </div>
 
-        <hr>
-
         <!-- Help & shipping section -->
     </section>
 
     <div class="down">
         <h6>Need Help?</h6>
         <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#content">Click Me</button>
+        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#content" style="background-color: black;">Click Me</button>
         <!-- need help Modal-->
         <div class="container">
             <div class="row">
@@ -129,14 +124,14 @@
         <hr>
         <br>
         <h6>Shipping & Returns</h6>
-        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#content">Click Me</button>
-        <!-- need help Modal-->
+        <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#content-s" style="background-color: black;">Click Me</button>
+        <!-- Shipping Modal-->
         <div class="container">
             <div class="row">
                 <!-- Modal content-->
-                <div class="collapse" id="content">
+                <div class="collapse" id="content-s">
                     <div class="well">
-                        for any question you have feel<br> to contact helpline <br> @ <a>helpline@isane.com</a>
+                        Delivery No: 1234567<br> will arrive at cape town <br> @ <a>on 01/02/2020</a>
                     </div>
                 </div>
             </div>
@@ -171,7 +166,20 @@
             </div>
         </div>
     </div>
-
+    <script>
+        $(document).ready(function() {
+            $('.count').prop('disabled', true);
+            $(document).on('click', '.plus', function() {
+                $('.count').val(parseInt($('.count').val()) + 1);
+            });
+            $(document).on('click', '.minus', function() {
+                $('.count').val(parseInt($('.count').val()) - 1);
+                if ($('.count').val() == 0) {
+                    $('.count').val(1);
+                }
+            });
+        });
+    </script>
 
 
 
